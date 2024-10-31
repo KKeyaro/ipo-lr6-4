@@ -4,12 +4,12 @@
 # [text.txt] 
 # - Сортирует найденные строки в порядке их длины (от самой короткой к самой длинной) и выводит их.
 
-search_string = input("Введите строку для поиска: ") #Запрашиваем у пользователя строку для поиска
+strc = input("Введите строку для поиска: ") #Запрашиваем у пользователя строку для поиска
 with open('text.txt', 'r', encoding='utf-8') as file: #Открываем файл
     lines = file.readlines() #Читаем строки в файле
-found_lines = [line.strip() for line in lines if search_string in line] #Находим строки, содержащие искомую подстроку
-print(f"Найдено строк: {len(found_lines)}") #Выводим количество найденных строк
-found_lines.sort(key=len) # Сортируем найденные строки по длине
+lines2 = [line.strip() for line in lines if strc in line] #Находим строки, содержащие искомую подстроку
+print(f"Найдено строк: {len(lines2)}") #Выводим количество найденных строк
+lines2.sort(key=len) # Сортируем найденные строки по длине
 print("Найденные строки:")
-for line in found_lines: #Используем цикл for
+for line in lines2: #Используем цикл for
     print(line) #Выводим найденные строки
